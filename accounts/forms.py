@@ -4,8 +4,8 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from .models import User
 
 class RegisterForm(forms.ModelForm):
-	password = forms.CharField(label='Password', widgets=forms.PasswordInput)
-	password2 = forms.CharField(label='Confirm password', widgets=forms.PasswordInput)
+	password = forms.CharField(label='Password', widget=forms.PasswordInput)
+	password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
 
 	class Meta:
 		model = User
@@ -30,8 +30,8 @@ class RegisterForm(forms.ModelForm):
 
 class AdminUserCreationForm(forms.ModelForm):
 	"""form for creating new admin users with all fields and repeated password field"""
-	password1 = forms.CharField(label='Password', widgets=forms.PasswordInput)
-	password2 = forms.CharField(label='Confirm password', widgets=forms.PasswordInput)
+	password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+	password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
 
 	class Meta:
 		model = User
